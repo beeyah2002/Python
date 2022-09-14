@@ -1,16 +1,16 @@
-emp = open('employee.txt','r')
-search = input('Enter name: ')
-line = emp.readline()
-while line != '':
-    
-    if line.strip() == search:
+def main():
+    emp = open('employee.txt','r')
+
+    line = emp.readline()
+    while line != '':
         print('name: ',line.rstrip())
         line = emp.readline()
         print('ID:',line.rstrip())
         line = emp.readline()
         print('dept:',line.rstrip())
-    line = emp.readline()
-emp.close()
+        line = emp.readline()
+    emp.close()
+main()
     
    
 

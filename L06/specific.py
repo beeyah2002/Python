@@ -1,17 +1,15 @@
-
 def main():
-    empfile = open("employee.txt",'r')
-    keep = empfile.readline()
-    name = input('Enter name your want to find : ')
+    emp = open('employee.txt','r')
+    search = input('Enter name: ')
+    line = emp.readline()
+    while line != '':
     
-    while keep != '':
-        if name in keep :
-            keep = empfile.readline()
-            print('Name', keep.rstrip())
-            keep = empfile.readline()
-            print('ID:',keep.rstrip())
-            keep = empfile.readline()
-            print('dept:',keep.rstrip())
-            keep = empfile.readline()
-
+        if line.strip() == search:
+            print('name: ',line.rstrip())
+            line = emp.readline()
+            print('ID:',line.rstrip())
+            line = emp.readline()
+            print('dept:',line.rstrip())
+        line = emp.readline()
+    emp.close()
 main()
