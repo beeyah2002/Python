@@ -34,18 +34,18 @@ while count == 'y':
         elif cup == 3:
             pay = 140
 
-    if main == 2 :
+    elif main == 2 :
         ch = 'Caffe\' Latte'
         print('press 1  = 12 Oz\npress 2 = 16 Oz\npress 3 20 Oz \n')
         cup = int(input('What size do you want? : '))
         if cup == 1:
-            pay = 110 
+            pay = '110 bath'  
         elif cup == 2:
             pay = 125
         elif cup == 3:
             pay = 140
 
-    if main == 3:
+    elif main == 3:
         ch = 'Capuccino'
         print('press 1  = 12 Oz\npress 2 = 16 Oz\npress 3 20 Oz \n')
         cup = int(input('What size do you want? : '))
@@ -56,7 +56,7 @@ while count == 'y':
         elif cup == 3:
             pay = 155
 
-    if main == 4:
+    elif main == 4:
         ch = 'Caramel Macchiato'
         print('press 1  = 12 Oz\npress 2 = 16 Oz\npress 3 20 Oz \n')
         cup = int(input('What size do you want? : '))
@@ -67,7 +67,7 @@ while count == 'y':
         elif cup == 3:
             pay = 165
 
-    if main == 5:
+    elif main == 5:
         ch = 'White Chocolate Mocha'
         print('press 1  = 12 Oz\npress 2 = 16 Oz\npress 3 20 Oz \n')
         cup = int(input('What size do you want? : '))
@@ -78,7 +78,7 @@ while count == 'y':
         elif cup == 3:
             pay = 165 
 
-    if main == 6:
+    elif main == 6:
         ch = 'caffe\' Americano '
         print('press 1  = 12 Oz\npress 2 = 16 Oz\npress 3 20 Oz \n')
         cup = int(input('What size do you want? : '))
@@ -89,7 +89,7 @@ while count == 'y':
         elif cup == 3:
             pay = 130       
 
-    if main == 7:
+    elif main == 7:
         ch = 'Freshly Brewed Coffee'
         print('press 1  = 12 Oz\npress 2 = 16 Oz\npress 3 20 Oz \n')
         cup = int(input('What size do you want? : '))
@@ -100,20 +100,26 @@ while count == 'y':
         elif cup == 3:
             pay = 130   
 
-    if main == 8:
+    elif main == 8:
         ch = 'Freshly Brewed Coffee'
         print('press 1  = 12 Oz\npress 2 = 16 Oz\npress 3 20 Oz \n')
         cup = int(input('What size do you want? : '))
         if cup == 1:
-            pay = 125
+            pay1= 125
         elif cup == 2:
-            pay = 140
+            pay1= 140
         elif cup == 3:
-            pay = 155   
-    print('any thing alse ?\npress 1 for')    
-    anything = ()
-    record = open('recordcoffee.txt', 'a')
-    rec1 = record.write(ch)
+            pay1 = 155   
+    print('any thing alse ?\npress 1 for flawer \npress 2  for espresso shot ')    
+    anything = int(input('Enter :'))
+    if anything == 1:
+        pay == 15 
+    elif anything == 2:
+        pay == 15
+record = open('recordcoffee.txt', 'a')
+rec = record.write('{} {} {}' .format(ch,pay1,pay))
+   
+
 
 
 

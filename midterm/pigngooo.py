@@ -1,7 +1,7 @@
 word = input('Enter word : ')
 upperword = word.upper()
 cut = upperword.split() # เป็นลิสต์เเล้ว 
-print(cut)
+
 pig = ''
 lenword = len(cut)
 for i in range(lenword):
