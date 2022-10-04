@@ -1,6 +1,3 @@
-from operator import le
-
-
 word = input('Enter word: ')
 countword = 0
 countvowel = 0
