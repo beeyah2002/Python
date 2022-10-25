@@ -1,6 +1,6 @@
 
 
-
+#Code to show how try-except-els-finally use
 def main():
     a,b = map(int, input("Input 2 integer values: ").split())
     divide(a,b)

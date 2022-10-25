@@ -11,6 +11,14 @@ print(findBigestNum(listnum))
 print(max(listnum))
 print(min(listnum))
 
+
+
+
+
+
+
+
+'''
 def find3Sum(nums):
     sum3 = nums[0]
     for i in nums:
@@ -21,4 +29,4 @@ def find3Sum(nums):
 print(find3Sum(listnum))
 
 
-
+'''

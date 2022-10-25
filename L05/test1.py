@@ -1,6 +1,8 @@
 '''
+#This program simulates 10 tosses of a coin.
 import random
 
+#Constants
 HEADS = 1
 TALLS = 2
 TOSSES = 10
@@ -11,7 +13,12 @@ def main():
             print('Heads')
         else:
             print('Tails')
+
+#call the main fuction
 main()
+
+
+
 
 
 DISCOUNT_PERCENTAGE = 0.20
@@ -29,6 +36,15 @@ def discount(price):
     return price * DISCOUNT_PERCENTAGE
 main()
 
+'''
+
+
+
+
+
+
+
+
 
 def get_name():
     first = input('Enter your first name : ')
@@ -37,4 +53,3 @@ def get_name():
 
 first_name, last_name = get_name()
 print('First name:', first_name, ' last name :' ,last_name)
-'''
