@@ -3,8 +3,8 @@ bee = [{ 'name' : "John", 'age' : 21 , 'budget' : 23000} ,{ 'name' : "Steve", 'a
 def getBudgets(bee):
     dog = 0
     for i in bee:
+        print(i)
         for j in i.keys():
-            
             if j == "budget":
                 cat = i[j]
                 dog += cat
