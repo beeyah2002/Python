@@ -1,7 +1,7 @@
-from os import cpu_count
 
 
-bee = ([1,2,3],9)
+
+bee = ([3,2,3],9)
 def simplepair(num):
     count = num[0]
     

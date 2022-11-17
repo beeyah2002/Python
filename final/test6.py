@@ -10,4 +10,4 @@ def removeDups(bee):
     print(listA)    
         
 
-removeDups(bee1)
+removeDups(bee)
