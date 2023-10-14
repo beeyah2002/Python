@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลส่วนตัว</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: URL('wp5134484.jpg'); /* เพิ่ม URL รูปภาพที่คุณต้องการใช้เป็นพื้นหลัง */
+            background-size: cover; /* ขนาดรูปภาพให้ปรับตามขนาดหน้าจอ */
+            background-repeat: no-repeat; /* ไม่ให้รูปภาพทำซ้ำ */
+            background-attachment: fixed; /* ตรงไปตรงมาเมื่อเลื่อนหน้าจอ */
+            margin: 0;
+            padding: 0;
+        }
+    
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: transparent;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+    
+        h2 {
+            text-align: center;
+        }
+    
+        .form-group {
+            margin-bottom: 20px;
+            background-color: transparent;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            background-color: transparent;
+        }
+    
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid white;
+            border-radius: 3px;
+            background-color: transparent;
+        }
+    
+        button[type="submit"] {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: 1px solid black;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+            color: white;
+
+            
+        }
+    
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .alert {
+            background-color: #f44336; /* สีพื้นหลังแจ้งเตือน */
+            color: white; /* สีข้อความ */
+            padding: 10px; /* ระยะห่างขอบ */
+            margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+            border-radius: 3px; /* ขอบเขตสวมรูป */
+            border: 1px solid #d32f2f; /* เส้นขอบ */
+        }
+
+        /* เพิ่มสไตล์ CSS สำหรับปุ่มปิด alert */
+        .closebtn {
+            margin-left: 15px;
+            color: transparent;
+            font-weight: bold;
+            float: right;
+            font-size: 20px;
+            line-height: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+        .form-group select {
+        background-color: transparent; /* เปลี่ยนสีพื้นหลังเป็นสีใส */
+        border: 1px solid #ffffff;
+        border-radius: 3px;
+        padding: 10px;
+        width: 100%;
+        color: #ffffff;
+        }
+        .form-group select option {
+        background-color: transparent; /* เปลี่ยนสีพื้นหลังเป็นสีใส */
+        border: 1px solid #ffffff;
+        border-radius: 3px;
+        padding: 10px;
+        width: 100%;
+        color: #050404;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>กรอกข้อมูลส่วนตัว</h2>
+        <form action=" " method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="title">คำนำหน้าชื่อ:</label>
+                <select id="title" name="title" required>
+                    <option value="" disabled selected>โปรดเลือกคำนำหน้า</option>
+                    <option value="Mr.">นาย</option>
+                    <option value="Mrs.">นาง</option>
+                    <option value="Miss">นางสาว</option>
+                    <option value="girl">เด็กหญิง</option>
+                    <option value="boy">เด็กชาย</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="first_name">ชื่อ:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">นามสกุล:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="id_card">เลขบัตรประชาชน:</label>
+                <input type="text" id="id_card" name="id_card" required>
+            </div>
+            <button type="submit">Submit</button>
+            
+        </form>
+        <script>
+            function validateForm() {
+                var title = document.getElementById("title").value;
+                var firstName = document.getElementById("first_name").value;
+                var lastName = document.getElementById("last_name").value;
+                var idCard = document.getElementById("id_card").value;
+                
+                // ตรวจสอบว่าชื่อหรือนามสกุลไม่ใช่ภาษาอังกฤษ
+                if (firstName === "" || lastName === "" || !/^[ก-๏\s]*$/.test(firstName) || !/^[ก-๏\s]*$/.test(lastName)) {
+                    alert("กรอกชื่อเเละนามสกุลให้ถูกต้อง");
+                    return false; // ไม่ส่งแบบฟอร์มถ้าชื่อหรือนามสกุลมีตัวอักษรพิเศษหรือภาษาอังกฤษ
+                } else if (idCard === "") {
+                    alert("กรอกเลขบัตรประชาชน");
+                    return false; // ไม่ถูกต้องเนื่องจากเป็นค่าว่าง
+                }else if (!/^[0-9]+$/.test(idCard)) {
+                    alert("กรอกเลขบัตรประชาชนให้ถูกต้อง");
+                    return false; // ไม่ถูกต้องเนื่องจากมีอักขระที่ไม่ใช่ตัวเลข
+                }else if (idCard.length !== 13) {
+                    alert("กรอกเลขบัตรประชาชนให้ถูกต้อง");
+                    return false; // ไม่ถูกต้องเนื่องจากความยาวไม่ถูกต้อง
+                }else if (/[a-zA-Z]/.test(idCard)) {
+                    alert("กรอกเลขบัตรประชาชนให้ถูกต้อง");
+                    return false; // มีตัวอักษรภาษาอังกฤษหรืออักษรอื่น ๆ อยู่
+                }
+                alert("กรอกข้อมูลเสร็จสิ้น");
+
+                // ส่งไปยังหน้า "index.html"
+                window.location.href = "index.html";
+
+                
+
+                return true; // ส่งแบบฟอร์มเมื่อผ่านการตรวจสอบทั้งหมด
+            }
+        </script>
+    </div>
+</body>
+</html>
